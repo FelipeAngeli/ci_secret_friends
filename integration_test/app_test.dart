@@ -28,8 +28,7 @@ void main() {
     await tester.testTextInput.receiveAction(TextInputAction.done);
 
     await tester.pump();
-    await tester.dragUntilVisible(addNameButton,
-        find.byType(SecondaryButtonWidget), const Offset(0, 100));
+    await tester.dragUntilVisible(addNameButton, find.byType(SecondaryButtonWidget), const Offset(0, 100));
 
     await tester.tap(addNameButton);
     await tester.pumpAndSettle();
@@ -41,8 +40,7 @@ void main() {
     await tester.enterText(inputField, 'Alice');
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pump();
-    await tester.dragUntilVisible(addNameButton,
-        find.byType(SecondaryButtonWidget), const Offset(0, 100));
+    await tester.dragUntilVisible(addNameButton, find.byType(SecondaryButtonWidget), const Offset(0, 100));
     await tester.tap(addNameButton);
     await tester.pumpAndSettle();
     expect(find.text('Alice'), findsOneWidget);
@@ -52,8 +50,7 @@ void main() {
     await tester.enterText(inputField, 'Bob');
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pump();
-    await tester.dragUntilVisible(addNameButton,
-        find.byType(SecondaryButtonWidget), const Offset(0, 100));
+    await tester.dragUntilVisible(addNameButton, find.byType(SecondaryButtonWidget), const Offset(0, 100));
     await tester.tap(addNameButton);
     await tester.pumpAndSettle();
     expect(find.text('Bob'), findsOneWidget);
@@ -69,21 +66,18 @@ void main() {
     expect(find.byType(DrawFormWidget), findsOneWidget);
     expect(find.text('Quem vai tirar o papelzinho?'), findsOneWidget);
     expect(find.byType(DropdownInputWidget), findsOneWidget);
-    expect(find.text('Clique em em sortear para ver quem é seu amigo secreto!'),
-        findsOneWidget);
+    expect(find.text('Clique em em sortear para ver quem é seu amigo secreto!'), findsOneWidget);
 
     //  Scenario 4: Select 'Alice' and draw a name
     final dropdownInput = find.byType(DropdownInputWidget);
 
-    await tester.dragUntilVisible(
-        dropdownInput, find.byType(DropdownInputWidget), const Offset(0, 100));
+    await tester.dragUntilVisible(dropdownInput, find.byType(DropdownInputWidget), const Offset(0, 100));
     await tester.tap(dropdownInput);
     await tester.pumpAndSettle();
     await tester.tap(find.text('Alice'));
     await tester.pumpAndSettle();
 
-    await tester.dragUntilVisible(find.text('Sortear!'),
-        find.byType(ElevatedButton), const Offset(0, 500));
+    await tester.dragUntilVisible(find.text('Sortear!'), find.byType(ElevatedButton), const Offset(0, 500));
     await tester.pumpAndSettle();
 
     expect(find.text('Alice'), findsOneWidget);
