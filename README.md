@@ -1,4 +1,3 @@
-![Mobile-Flutter: Flutter CI](capa.png)
 
 # Flutter: Integração Contínua
 
