@@ -20,7 +20,7 @@ void main() {
       'Tries to draw a name when all names are drawn',
       build: () => NameDrawCubit(['Alice', 'Bob']),
       act: (cubit) {
-        cubit.drawNameForPerson('Alice');
+        cubit.drawNameForPerson('Alice2');
         cubit.drawNameForPerson('Bob');
         cubit.drawNameForPerson('Bob');
       },
